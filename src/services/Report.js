@@ -38,11 +38,12 @@ class Report extends Service{
     async getAll(){
         const result = await this.request("GET", `${this.API_URI}/reportes`);
         if(!!result ? result.status === 200 : false) return result.data;
-        Swal.fire(
-            '¡Error!',
-            'Ha surgido un problema, intente mas tarde.',
-            'error'
-        )
+        if(result.status !== undefined)
+            Swal.fire(
+                '¡Error!',
+                'Ha surgido un problema, intente mas tarde.',
+                'error'
+            )
         console.error("Error al obtener Reportes::", result)
         return { array: [], server: 'none' }
     }
@@ -50,11 +51,12 @@ class Report extends Service{
     async getByCarnet(carnet) {
         const result = await this.request("GET", `${this.API_URI}/reportes/${carnet}`);
         if(!!result ? result.status === 200 : false) return result.data;
-        Swal.fire(
-            '¡Error!',
-            'Ha surgido un problema, intente mas tarde.',
-            'error'
-        )
+        if(result.status !== undefined)
+            Swal.fire(
+                '¡Error!',
+                'Ha surgido un problema, intente mas tarde.',
+                'error'
+            )
         console.error(result);
         return { array: [], server: 'none' }
     }

@@ -25,11 +25,12 @@ class Attendance extends Service{
     async getList(idEvento){
         const result = await this.request("GET", `${this.API_URI}/reporteidev/${idEvento}`)
         if(!!result ? result.status === 200 : false) return result.data;
-        Swal.fire(
-            '¡Error!',
-            'Ha surgido un problema, intente mas tarde.',
-            'error'
-        )
+        if(result.status !== undefined)
+            Swal.fire(
+                '¡Error!',
+                'Ha surgido un problema, intente mas tarde.',
+                'error'
+            )
         console.error("Error al obtener Asistencias::", result)
         return { array: [], server: 'none' }
     }
@@ -37,11 +38,12 @@ class Attendance extends Service{
     async getListEvent(carnet){
         const result = await this.request("GET", `${this.API_URI}/reportecar/${carnet}`)
         if(!!result ? result.status === 200 : false) return result.data;
-        Swal.fire(
-            '¡Error!',
-            'Ha surgido un problema, intente mas tarde.',
-            'error'
-        )
+        if(result.status !== undefined)
+            Swal.fire(
+                '¡Error!',
+                'Ha surgido un problema, intente mas tarde.',
+                'error'
+            )
         console.error("Error al obtener Eventos::", result)
         return { array: [], server: 'none' }
     }

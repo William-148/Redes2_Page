@@ -12,7 +12,6 @@ function ViewForm(props){
 
     useEffect(() => {
         const setFields = (data) =>{
-            console.log(data)
             setCarnet(data.carnet);
             setName(data.nombre);
             setProyect(data.curso);

@@ -12,7 +12,6 @@ function ListAttendance(props){
     const search = async () => {
         if(idEvent === '') return;
         const { array, server } = await Attendance.getList(idEvent);
-        console.log(array)
         setList(array);
         setProcessBy(server);
     }
