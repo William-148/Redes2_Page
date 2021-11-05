@@ -15,7 +15,7 @@ function App() {
                     <Home/>;
                 </Route>
                 <Route exact path='/'>
-                    <Redirect to="/asistencia"/>
+                    <Attendance/>
                 </Route>
             </Switch>
         </BrowserRouter>
