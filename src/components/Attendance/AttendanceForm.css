@@ -1,0 +1,15 @@
+.profile-input:focus{
+    border-bottom: 2px solid rgb(79, 79, 79);
+}
+
+.input-image{
+    display: none;
+}
+
+.image-viewer img{
+    width: 100%;
+    border-radius: 10px;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
