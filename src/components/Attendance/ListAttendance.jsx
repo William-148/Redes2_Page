@@ -11,7 +11,8 @@ function ListAttendance(props){
 
     const search = async () => {
         if(idEvent === '') return;
-        const { array, server } = await Attendance.getList(idEvent)
+        const { array, server } = await Attendance.getList(idEvent);
+        console.log(array)
         setList(array);
         setProcessBy(server);
     }
@@ -28,10 +29,10 @@ function ListAttendance(props){
                 <th scope="row">{row.evento}</th>
                 <td>{row.carnet}</td>
                 <td>{row.estudiante}</td>
-                <td>{row.fecha}</td>
+                <td>{Attendance.convertDate(row.fecha)}</td>
                 <td>{row.servidor}</td>
                 <td>
-                    <a href={Default} className="btn btn-sm btn-secondary" target="_blank">
+                    <a href={!!row.image? row.image === '' ? Default : row.image : row.image } className="btn btn-sm btn-secondary" target="_blank">
                         <i className="fas fa-image fa-ms"></i>
                     </a>
                 </td>

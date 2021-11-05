@@ -12,7 +12,7 @@ function App() {
                     <Attendance/>
                 </Route>
                 <Route exact path='/report'>
-                    <Home/>;
+                    <Home/>
                 </Route>
                 <Route exact path='/'>
                     <Redirect to="/asistencia"/>

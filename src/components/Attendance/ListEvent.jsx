@@ -27,10 +27,10 @@ function ListEvent(props){
                 <td>{row.estudiante}</td>
                 <td>{row.idEvento}</td>
                 <td>{row.evento}</td>
-                <td>{row.fecha}</td>
+                <td>{Attendance.convertDate(row.fecha)}</td>
                 <td>{row.servidor}</td>
                 <td>
-                    <a href={Default} className="btn btn-sm btn-secondary" target="_blank">
+                    <a href={!!row.image? row.image === '' ? Default : row.image : row.image } className="btn btn-sm btn-secondary" target="_blank">
                         <i className="fas fa-image fa-ms"></i>
                     </a>
                 </td>
