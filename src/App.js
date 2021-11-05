@@ -6,7 +6,7 @@ import './App.css'
 function App() {
     
     return (
-        <BrowserRouter>
+        <BrowserRouter basename='/Redes2_Page'>
             <Switch>
                 <Route exact path='/asistencia'>
                     <Attendance/>
